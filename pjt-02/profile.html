@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>금융-프로필</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100..900&display=swap" rel="stylesheet">
+  <style>
+    * {
+      font-family: "Noto Sans KR", serif;
+      font-optical-sizing: auto;
+      font-weight: bold;
+      font-style: normal;
+    }
+
+    /* Navbar 관련 스타일 */
+
+    .grow {
+      flex-grow: 0;
+    }
+
+    /* 프로필 구간 */
+    .round-img {
+      border-radius: 100%;
+    }
+
+    .bg-primary-subtle {
+      background-color: #9ec5fe;
+    }
+
+    .edit {
+      top: 3%;
+      right: 3%;
+      border-radius: 100%;
+      padding: 5px;
+
+      background-color: hsla(208, 100%, 43%, 0.651);
+    }
+    .btn-outline-primary-subtle {
+      border: solid 1px #9ec5fe;
+      color:#0d6efd;
+
+    }
+
+    input[type="radio"]:hover + .selected, input[type="checkbox"]:hover + .selected{
+      color: #0d6efd;
+      border: solid 1px #0d6efd;
+      
+    }
+
+    input[type="radio"]:checked + .selected, input[type="checkbox"]:checked + .selected{
+      background-color: #0d6efd;
+      color: white;
+      
+      border-right: solid 1px white;
+      border-left: solid 1px white;
+
+      border-top: solid 1px #0d6efd;
+      border-bottom:solid 1px  #0d6efd;
+    }
+    /* 프로필 수정란 */
+    .p-left-30px{
+      left: 30px !important; 
+    }
+
+    
+  </style>
+</head>
+
+<body>
+  <div class="container">
+    <div class="row">
+      <header>
+        <nav class="navbar navbar-expand-lg bg-primary" data-bs-theme="dark">
+          <div class="container-fluid">
+            <a class="navbar-brand" href="#">Menu</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+              aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse grow" id="navbarNav">
+              <ul class="navbar-nav">
+                <li class="nav-item">
+                  <a class="nav-link " aria-current="page" href="main.html">Home</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link active" href="profile.html">User Profile</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="portfolio.html">User Portfolio</a>
+                </li>
+                <li class="nav-item  ">
+                  <a class="nav-link bg-light rounded-3 text-primary px-3" href="logout.html">Logout</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </header>
+      <main>
+
+        <div class="container">
+          <!-- 기본 정보 수정 - 프로필 출력란 -->
+          <div class="row g-3">
+            <div class="col-12 ">
+              <h1 class=" mt-5">내 정보</h1> <!-- text-center -->
+            </div>
+            <div class="col-12 col-md-4 offset-md-0">
+              <div class="card col-12 p-auto w-100 d-flex flex-column">
+                <h5 class="card-header bg-primary text-light">Paisley Ross</h5>
+                <div class="card-body h-100 d-flex flex-column">
+                  <div class="position-relative">
+                    <img src="img/profile1.jpg" alt="profile img" class="w-100 h-100 round-img shadow m-auto">
+                    <img src="img/32px.png" alt="프로필 편집 아이콘" class="position-absolute edit">
+                  </div>
+                  <div class="form-floating my-3">
+                    <textarea class="form-control " placeholder="자기 소개 작성란" id="floatingTextarea2"
+                      style="height: 200px">안녕하세요! 저는 금융 시장과 투자 전략에 깊은 관심을 가진 열정적인 투자자입니다. 함께 성장하며 다양한 투자 아이디어를 공유하고 싶습니다.</textarea>
+                    <label for="floatingTextarea2">Introduction</label>
+                  </div>
+                  <a href="#" class="btn btn-primary">Update</a>
+                </div>
+              </div>
+              <div class="img-box col-12 p-auto">
+
+              </div>
+            </div>
+            <div class="col-12 col-md-8">
+              <div class="card w-100 d-flex flex-column h-100 py-auto">
+                <div class="card-body  d-flex flex-column ">
+                  <h4 class="mt-3">투자 상품 선호도</h4>
+                  <div class="btn-group btn-group-lg" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck1" autocomplete="off">
+                    <label class="btn btn-outline-primary-subtle selected" for="btncheck1">주식</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck2" autocomplete="off">
+                    <label class="btn btn-outline-primary-subtle selected" for="btncheck2">채권</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck3" autocomplete="off">
+                    <label class="btn btn-outline-primary-subtle selected" for="btncheck3">부동산</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck4" autocomplete="off">
+                    <label class="btn btn-outline-primary-subtle selected" for="btncheck4">가상 화폐</label>
+                  </div>
+
+                  <h4 class="mt-5">투자 스타일<span class="text-body-tertiary fs-6">&nbsp;&nbsp;단일 선택</span></h4>
+                  <div class="btn-group btn-group-lg" role="group" aria-label="Basic radio toggle button group">
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off" checked>
+                    <label class="btn btn-outline-primary-subtle selected" for="btnradio1">안정적</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off">
+                    <label class="btn btn-outline-primary-subtle selected" for="btnradio2">중립적</label>
+
+                    <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off">
+                    <label class="btn btn-outline-primary-subtle selected" for="btnradio3">공격적</label>
+                  </div>
+
+                  <h4 class="mt-5">관심 종목</h4>
+                  <div class="btn-group btn-group-lg" role="group" aria-label="Basic checkbox toggle button group">
+                    <input type="checkbox" class="btn-check" id="btncheck2-1" autocomplete="off">
+                    <label class="btn btn-outline-primary-subtle selected" for="btncheck2-1">정보기술</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck2-2" autocomplete="off">
+                    <label class="btn btn-outline-primary-subtle selected" for="btncheck2-2">소비재</label>
+
+                    <input type="checkbox" class="btn-check" id="btncheck2-3" autocomplete="off">
+                    <label class="btn btn-outline-primary-subtle selected" for="btncheck2-3">금융</label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <!-- 기본 정보 수정 - 회원 정보 입력 -->
+           <div class="row">
+            <div class="col-12">
+              <h2>회원 정보 수정</h2>
+              <div class="card text-center" id="profile-edit">
+                <div class="card-header bg-primary">
+                  <ul class="nav nav-tabs card-header-tabs">
+                    <li class="nav-item">
+                      <a class="nav-link active" aria-current="true" href="#">기본 정보</a>
+                    </li>
+                     <li class="nav-item">
+                      <a class="nav-link text-dark bg-primary-subtle" href="portfolio.html#portfolio-edit">포트폴리오</a>
+                    <!--</li>
+                    <li class="nav-item">
+                      <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+                    </li> -->
+                  </ul>
+                </div>
+                <div class="card-body text-start">
+                  <h6>회원번호</h6>
+                  <input type="text" class="form-control border border-primary-subtle"  disabled placeholder="BxzMke2nY" aria-label="Username" aria-describedby="basic-addon1">
+
+                  <h6 class="mt-4">ID</h6>
+                  <input type="text" class="form-control border border-primary-subtle"  disabled placeholder="lSRPO0823!" aria-label="Username" aria-describedby="basic-addon1">
+
+                  <h6 class="mt-4">Email</h6>
+                  <div class="d-flex input-group">
+
+                    <div class="form-floating">
+                      <input type="email" class="form-control border border-primary-subtle" id="floatingInputGrid" placeholder="Email" value="lSRPO0823">
+                      <label for="floatingInputGrid">Email address</label>
+                    </div>
+                    
+                    <div class="form-floating">
+                      <select class="form-select  border border-primary-subtle" id="floatingSelectGrid">
+                        <option selected>@example.com</option>
+                        <option value="1">@naver.com</option>
+                        <option value="2">@gmail.com</option>
+                        <option value="3">@hanmail.cm</option>
+                        <option value="4">직접 입력</option>
+                      </select>
+                      <label for="floatingSelectGrid"><span class="d-none d-md-inline">Choose the email</span><span class="d-inline d-md-none">Email</span> domain</label>
+                    </div>
+                    <button class="btn btn-outline-primary border border-primary-subtle" type="button" id="button-addon2">Button</button>
+                  </div>
+                    
+                    <h6 class="mt-4">유저명</h6>
+                    <div class="form-floating input-group">
+                      <input type="email" class="form-control border border-primary-subtle" id="floatingTextarea-name" placeholder="Nick Name" value="Paisley Ross">
+                      <label for="floatingTextarea-name">Nick Name</label>
+                      <button class="btn btn-outline-primary border border-primary-subtle" type="button" id="button-addon2">Button</button>
+                    </div>
+                    
+                    <h6 class="mt-4">나이</h6>
+                    <div class="form-floating input-group">
+                      <input class="form-control border border-primary-subtle" id="floatingTextarea-age " placeholder="Age" value="35">                 
+                      <label for="floatingTextarea-age">Age</label>
+                      <button class="btn btn-outline-primary border border-primary-subtle" type="button" id="button-addon2">Button</button>
+                    </div>
+                    
+                    <h6 class="mt-4">자산 · 연봉</h6>
+                    <div class="d-flex  input-group">
+                      <div class="form-floating me-1 input-group">
+                        <span class="input-group-text border border-primary-subtle">$</span>
+                        <input class="form-control border border-primary-subtle" id="floatingTextarea-asset" placeholder="Asset" value="350,000">                           
+                        <label for="floatingTextarea-asset" class="p-left-30px">asset</label>
+                      </div>
+                      <div class="form-floating ms-1 input-group ">
+                        <span class="input-group-text border border-primary-subtle">$</span>
+                        <input class="form-control border border-primary-subtle" id="floatingTextarea-salary" placeholder="Salary" value="50,000">                                 
+                        <label for="floatingTextarea-salary" class="p-left-30px">salary</label>
+                      </div>
+                      <button class="btn btn-outline-primary  border border-primary-subtle" type="button" id="button-addon2">Button</button>
+                    </div>
+                    
+                  </div>
+                </div>
+              </div>
+            </div>
+            
+           </div>
+        </div>
+
+    </div>
+  </div>
+  <div class="row">
+
+  </div>
+  </main>
+  </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+</body>
+
+</html>
